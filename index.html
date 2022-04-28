@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+    body{font-family: 'Open Sans', sans-serif; width:100%; background: white;
+        left:0px;top:0px;text-align: left; margin: 0px;}
+
+    
+    header{width:100%;background: white ; height:80px;text-align: left;
+    padding:40px 23px 10px 23px; position:fixed; overflow:hidden; z-index: 3; 
+    border-bottom:1px solid black;}
+
+    a:link { color: black; text-decoration: none; }
+    a:visited { color: black; }
+
+    img{width:100%;}
+    div{padding: 0px;}
+    p{font-size: 1em; margin:2px;}
+    h1{font-size: 0.75em; margin:2px;text-align:center;}
+
+.footer{
+border-top: 1px solid black;
+padding-top: 7px;
+
+}
+
+.collapsible {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 11px;
+  padding-top: 16px;
+  padding-left:22px;
+  width: 100%;
+  border-top: 1px solid black;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+  text-align: left;
+  outline: none;
+  font-size: 2.7em;
+  font-style: thin;
+  align-content: center;
+}
+
+.content {
+  padding: 0 20px;
+  display: none;
+  overflow: hidden;
+
+}
+
+.thumbnails
+{ margin-right: -1.4px;
+  margin-top: -8px;}
+
+
+.th1{
+ width: 49%;
+ height: 250px;
+ margin-right: 1.4px;
+ margin-top: 20px;
+ margin-bottom: 5px;
+ display: inline-block;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px; 
+
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 25px 12px 3px;
+  transition: 0.3s;
+  font-size: 17px;
+  color: grey;
+  background-color:white;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  color: black;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  color: black;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 0px;
+  border-top: none;
+}
+
+
+</style>
+</head>
+<header>  
+    <div>
+    <img src="./img/logo.png" style="padding-top: 0em; width: 34%;" >
+    </div>
+</header>
+<body>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="main" style="height: 259px; ">
+    <img src="./img/main.jpg" style="width: 100%; height: 100%; " >   
+</div>
+
+
+
+
+
+<!--/  메인 탭 **** APP  
+  ____  ____   ____                                        
+ /    ||    \ |    \                                       
+|  o  ||  o  )|  o  )                                      
+|     ||   _/ |   _/                                       
+|  _  ||  |   |  |                                         
+|  |  ||  |   |  |                                         
+|__|__||__|   |__| 
+
+/-->
+
+<button type="button" class="collapsible">
+    <img src="./img/app.png" style="width: 140px;">
+    <img src="./img/icon.png" style="width: 38px; padding-left: 155px; padding-top: 1px;">
+</button>
+
+
+<div class="content">
+       
+
+       <!--/세부 프로젝트 탭/-->
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'Project#S')">Project #S</button>
+            <button class="tablinks" onclick="openCity(event, 'Instagram')">Instagram</button>
+            <button class="tablinks" onclick="openCity(event, 'ZUM')">ZUM</button>
+            <button class="tablinks" onclick="openCity(event, 'Bank')">Bank</button>
+            <button class="tablinks" onclick="openCity(event, 'Map')">Map</button>
+            <button class="tablinks" onclick="openCity(event, 'Youtube')">Youtube</button>
+            <button class="tablinks" onclick="openCity(event, 'Sdokugame')">Sdoku game</button>
+            <button class="tablinks" onclick="openCity(event, 'Taxi')">Taxi</button>
+        </div>
+
+
+        
+        <!--/    APP **** Project #S    / 시작 -->
+
+        <div id="Project#S" class="tabcontent">
+            <div class="thumbnails">
+           
+                
+                    <div class="th1">
+                        <a href="https://cloud.protopie.io/p/fe068c4aee?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
+                            <div class="image"> 
+                                <img src="./img/s/s1_i.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>Project #S (iOS)</p>
+                            </div>
+                        </a>
+                    </div>
+                
+
+                    <div class="th1">
+                        <a href="https://cloud.protopie.io/p/bd6beec957?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
+                            <div class="image"> 
+                                <img src="./img/s/s1_a.png" style="height: 225px;">
+                            </div>
+                            
+                            <div class="caption">
+                                <p>Project #S (AOS)</p>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="th1">
+                        <a href="https://cloud.protopie.io/p/bfd3d53ad2?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
+                            <div class="image"> 
+                                <img src="./img/s/s2_i.png" style="height: 225px;">
+                            </div>
+                            
+                            <div class="caption">
+                                <p>프로필</p>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="th1">
+                        <a href="https://www.w3schools.com">
+                            <div class="image"> 
+                                <img src="./img/s/s2_a.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>문자채팅</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="th1">
+                        <a href="https://www.w3schools.com">
+                            <div class="image"> 
+                                <img src="./img/s/s4_a.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>음성채팅</p>
+                            </div>
+                        </a>
+                    </div>
+                
+
+                    <div class="th1">
+                        <a href="https://cloud.protopie.io/p/04de49af85?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
+                            <div class="image"> 
+                                <img src="./img/s/s3_i.png" style="height: 225px;">
+                            </div>
+                            
+                            <div class="caption">
+                                <p>화상채팅</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="th1">
+                        <a href="https://www.w3schools.com">
+                            <div class="image"> 
+                                <img src="./img/s/s3_aa.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>프로필 목록</p>
+                            </div>
+                        </a>
+                    </div>
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <!--/    APP **** Project #S    / 끝 -->
+
+
+
+
+        <!--/    APP **** Instagram    / 시작-->
+
+        <div id="Instagram" class="tabcontent">
+            <div class="thumbnails">
+           
+                
+                    <div class="th1">
+                        <a href="https://www.w3schools.com">
+                            <div class="image"> 
+                                <img src="./img/main.jpg" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>피드</p>
+                            </div>
+                        </a>
+                    </div>
+                
+
+                    <div class="th1">
+                        <a href="https://www.w3schools.com">
+                            <div class="image"> 
+                                <img src="./img/main.jpg" style="height: 225px;">
+                            </div>
+                            
+                            <div class="caption">
+                                <p>인스타그램 실행</p>
+                            </div>
+                        </a>
+                    </div>
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <!--/    APP **** Instagram    / 끝-->
+
+
+        <!--/    APP **** ZUM    / 시작-->
+
+        <div id="ZUM" class="tabcontent">
+            <div class="thumbnails">
+           
+                
+                    <div class="th1">
+                        <a href="https://www.w3schools.com">
+                            <div class="image"> 
+                                <img src="./img/s/zum2.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>검색피드</p>
+                            </div>
+                        </a>
+                    </div>
+                
+
+                    <div class="th1">
+                        <a href="https://cloud.protopie.io/p/bcd424836b?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
+                            <div class="image"> 
+                                <img src="./img/s/zum.png" style="height: 225px;">
+                            </div>
+                            
+                            <div class="caption">
+                                <p>줌(ZUM) 실행</p>
+                            </div>
+                        </a>
+                    </div>
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <!--/    APP **** ZUM    / 끝-->
+
+
+        <!--/    APP **** Bank    / 시작-->
+
+        <div id="Bank" class="tabcontent">
+            <div class="thumbnails">
+           
+                
+                    <div class="th1">
+                        <a href="https://cloud.protopie.io/p/129b007f54?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
+                            <div class="image"> 
+                                <img src="./img/s/bank.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>은행APP 송금</p>
+                            </div>
+                        </a>
+                    </div>
+
+
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <!--/    APP **** Bank    / 끝-->
+
+
+        <!--/    APP **** Map    / 시작-->
+
+        <div id="Map" class="tabcontent">
+            <div class="thumbnails">
+           
+                
+                    <div class="th1">
+                        <a href="https://cloud.protopie.io/p/338acef79c?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
+                            <div class="image"> 
+                                <img src="./img/s/map.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>로드뷰 APP</p>
+                            </div>
+                        </a>
+                    </div>
+
+
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <!--/    APP **** Map    / 끝-->
+
+
+        <!--/    APP **** Youtube    / 시작-->
+
+        <div id="Youtube" class="tabcontent">
+            <div class="thumbnails">
+           
+                
+                    <div class="th1">
+                        <a href="https://cloud.protopie.io/p/4ba1922075?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
+                            <div class="image"> 
+                                <img src="./img/s/youtube.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>유튜브 APP</p>
+                            </div>
+                        </a>
+                    </div>
+
+
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <!--/    APP **** Youtube    / 끝-->
+
+
+        <!--/    APP **** Sdoku game    / 시작-->
+
+        <div id="Sdokugame" class="tabcontent">
+            <div class="thumbnails">
+           
+                
+                    <div class="th1">
+                        <a href="https://www.w3schools.com">
+                            <div class="image"> 
+                                <img src="./img/s/sdoku.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>스도쿠 게임</p>
+                            </div>
+                        </a>
+                    </div>
+
+
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <!--/    APP **** Sdoku game    / 끝-->
+
+
+
+        <!--/    APP **** Taxi    / 시작-->
+
+        <div id="Taxi" class="tabcontent">
+            <div class="thumbnails">
+           
+                
+                    <div class="th1">
+                        <a href="https://cloud.protopie.io/p/3099fa4351?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
+                            <div class="image"> 
+                                <img src="./img/s/taxi.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>콜택시 APP</p>
+                            </div>
+                        </a>
+                    </div>
+
+
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <!--/    APP **** Taxi    / 끝-->
+
+</div>
+
+
+
+
+
+
+
+
+<!--/  메인 탭 **** Phone  
+ ____   __ __   ___   ____     ___ 
+|    \ |  |  | /   \ |    \   /  _]
+|  o  )|  |  ||     ||  _  | /  [_ 
+|   _/ |  _  ||  O  ||  |  ||    _]
+|  |   |  |  ||     ||  |  ||   [_ 
+|  |   |  |  ||     ||  |  ||     |
+|__|   |__|__| \___/ |__|__||_____|
+
+/-->
+
+<button type="button" class="collapsible">
+    <img src="./img/phone.png" style="width: 140px;">
+    <img src="./img/icon.png" style="width: 38px; padding-left: 155px; padding-top: 1px;">
+</button>
+
+
+<div class="content">
+       
+
+       <!--/세부 프로젝트 탭/-->
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'iOS')">iOS</button>
+            <button class="tablinks" onclick="openCity(event, 'Android')">Android</button>
+        </div>
+
+
+        
+        <!--/    APP **** iOS    / 시작 -->
+
+        <div id="iOS" class="tabcontent">
+            <div class="thumbnails">
+           
+                
+                    <div class="th1">
+                        <a href="https://cloud.protopie.io/p/7d937483f9?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
+                            <div class="image"> 
+                                <img src="./img/s/i2.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>잠금화면 (실시간 알림)</p>
+                            </div>
+                        </a>
+                    </div>  
+
+                     <div class="th1">
+                        <a href="https://cloud.protopie.io/p/6d1daaacab?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
+                            <div class="image"> 
+                                <img src="./img/s/i3.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>잠금화면 (실시간 알림)</p>
+                            </div>
+                        </a>
+                    </div> 
+
+                     <div class="th1">
+                        <a href="https://cloud.protopie.io/p/d2e12e007b?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
+                            <div class="image"> 
+                                <img src="./img/s/i1.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>잠금화면 (기존 알림)</p>
+                            </div>
+                        </a>
+                    </div>      
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <!--/    APP **** iOS    / 끝 -->
+
+
+
+
+        <!--/    APP **** Android    / 시작-->
+
+        <div id="Android" class="tabcontent">
+            <div class="thumbnails">
+           
+                
+                    <div class="th1">
+                        <a href="https://cloud.protopie.io/p/c0a0b03f16?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
+                            <div class="image"> 
+                                <img src="./img/s/a3.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>잠금화면 (실시간 알림)</p>
+                            </div>
+                        </a>
+                    </div>
+                
+
+                    <div class="th1">
+                        <a href="https://cloud.protopie.io/p/5f4536b0b1?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
+                            <div class="image"> 
+                                <img src="./img/s/a2.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>잠금화면 (기존 알림)</p>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="th1">
+                        <a href="https://cloud.protopie.io/p/176aec1042?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
+                            <div class="image"> 
+                                <img src="./img/s/a1.png" style="height: 225px;">
+                            </div>
+                            
+                            <div class="caption">
+                                <p>홈화면 실행</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="th1">
+                        <a href="https://cloud.protopie.io/p/0af07264d9?touchHint=true&ui=true&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=false">
+                            <div class="image"> 
+                                <img src="./img/s/a4.png" style="height: 225px;">
+                            </div>
+                            
+                            <div class="caption">
+                                <p>통화중 알림</p>
+                            </div>
+                        </a>
+                    </div>
+
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <!--/    APP **** Android    / 끝-->
+
+</div>
+
+
+
+
+<!--/  메인 탭 **** PC
+ ____      __                      
+|    \    /  ]                     
+|  o  )  /  /                      
+|   _/  /  /                       
+|  |   /   \_                      
+|  |   \     |                     
+|__|    \____|                     
+
+/-->
+
+<button type="button" class="collapsible">
+    <img src="./img/pc.png" style="width: 140px;">
+    <img src="./img/icon.png" style="width: 38px; padding-left: 155px; padding-top: 1px;">
+</button>
+
+
+<div class="content">
+       
+
+       <!--/세부 프로젝트 탭/-->
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'Project#SPC')">Project #S</button>
+            <button class="tablinks" onclick="openCity(event, 'Project#S2')">Project #S2</button>
+            <button class="tablinks" onclick="openCity(event, 'Google')">Google</button>
+            <button class="tablinks" onclick="openCity(event, 'game')">사행성게임기</button>
+
+        </div>
+
+
+        
+        <!--/    APP **** Project #S    / 시작 -->
+
+        <div id="Project#SPC" class="tabcontent">
+            <div class="thumbnails">
+           
+                
+                    <div class="th1">
+                        <a href="https://www.w3schools.com">
+                            <div class="image"> 
+                                <img src="./img/main.jpg" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>#S 메인</p>
+                            </div>
+                        </a>
+                    </div>  
+
+                    <div class="th1">
+                        <a href="https://www.w3schools.com">
+                            <div class="image"> 
+                                <img src="./img/main.jpg" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>#S 관리자페이지</p>
+                            </div>
+                        </a>
+                    </div> 
+
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <!--/    APP **** Project #S    / 끝 -->
+
+
+
+    <!--/    APP **** Project #S2    / 시작 -->
+
+        <div id="Project#S2" class="tabcontent">
+            <div class="thumbnails">
+           
+                
+                    <div class="th1">
+                        <a href="https://www.w3schools.com">
+                            <div class="image"> 
+                                <img src="./img/main.jpg" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>Project #S2</p>
+                            </div>
+                        </a>
+                    </div>  
+
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <!--/    APP **** Project #S2   / 끝 -->
+
+
+
+
+        <!--/    APP **** Google    / 시작-->
+
+        <div id="Google" class="tabcontent">
+            <div class="thumbnails">
+           
+                
+                    <div class="th1">
+                        <a href="https://www.w3schools.com">
+                            <div class="image"> 
+                                <img src="./img/main.jpg" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>웹서핑</p>
+                            </div>
+                        </a>
+                    </div>
+                
+
+                    <div class="th1">
+                        <a href="https://www.w3schools.com">
+                            <div class="image"> 
+                                <img src="./img/main.jpg" style="height: 225px;">
+                            </div>
+                            
+                            <div class="caption">
+                                <p>로드뷰</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <!--/    APP **** Google    / 끝-->
+
+
+
+         <!--/    APP **** 사행성게임기    / 시작 -->
+
+        <div id="game" class="tabcontent">
+            <div class="thumbnails">
+           
+                
+                    <div class="th1">
+                        <a href="https://www.w3schools.com">
+                            <div class="image"> 
+                                <img src="./img/s/game1.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>사행성게임기</p>
+                            </div>
+                        </a>
+                    </div>  
+
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <!--/    APP **** 사행성게임기   / 끝 -->
+
+</div>
+
+
+
+<!--/  메인 탭 **** ETC
+   ___  ______     __              
+  /  _]|      |   /  ]             
+ /  [_ |      |  /  /              
+|    _]|_|  |_| /  /               
+|   [_   |  |  /   \_              
+|     |  |  |  \     |             
+|_____|  |__|   \____|                                        
+
+/-->
+
+<button type="button" class="collapsible">
+    <img src="./img/etc.png" style="width: 140px;">
+    <img src="./img/icon.png" style="width: 38px; padding-left: 155px; padding-top: 1px;">
+</button>
+
+
+<div class="content">
+       
+
+       <!--/세부 프로젝트 탭/-->
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'Car')">Car program</button>
+        </div>
+
+        <!--/    APP **** Car    / 시작 -->
+
+        <div id="Car" class="tabcontent">
+            <div class="thumbnails">
+           
+                
+                    <div class="th1">
+                        <a href="https://www.w3schools.com">
+                            <div class="image"> 
+                                <img src="./img/s/car.png" style="height: 225px;">
+                            </div>
+
+                            <div class="caption">
+                                <p>Car UX</p>
+                            </div>
+                        </a>
+                    </div>  
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <!--/    APP **** Car    / 끝 -->
+
+
+</div>
+
+
+<!--/   
+ ____   _       ____  ____   __  _ 
+|    \ | |     /    ||    \ |  |/ ]
+|  o  )| |    |  o  ||  _  ||  ' / 
+|     || |___ |     ||  |  ||    \ 
+|  O  ||     ||  _  ||  |  ||     \
+|     ||     ||  |  ||  |  ||  .  |
+|_____||_____||__|__||__|__||__|\_|
+
+-->
+
+<button type="button" class="collapsible">
+</button>
+
+<div class="content"></div>
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="footer">
+    <h1>www.cinemaux.co.kr</h>
+    <h1>Copyright&copy; 2022 cinemaUX All rights reserved.</h1>
+</div>
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+
+
+</body>
+</html>
