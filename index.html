@@ -1,920 +1,274 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko" class="scroll-smooth">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-    body{font-family: 'Open Sans', sans-serif; width:100%; background: white;
-        left:0px;top:0px;text-align: left; margin: 0px;}
-
-    
-    header{width:100%;background: white ; height:80px;text-align: left;
-    padding:40px 23px 10px 23px; position:fixed; overflow:hidden; z-index: 3; 
-    border-bottom:1px solid black;}
-
-    a:link { color: black; text-decoration: none; }
-    a:visited { color: black; }
-
-    img{width:100%;}
-    div{padding: 0px;}
-    p{font-size: 1em; margin:2px;}
-    h1{font-size: 0.75em; margin:2px;text-align:center;}
-
-.footer{
-border-top: 1px solid black;
-padding-top: 7px;
-
-}
-
-.collapsible {
-  background-color: white;
-  color: black;
-  cursor: pointer;
-  padding: 11px;
-  padding-top: 16px;
-  padding-left:22px;
-  width: 100%;
-  border-top: 1px solid black;
-  border-bottom: none;
-  border-right: none;
-  border-left: none;
-  text-align: left;
-  outline: none;
-  font-size: 2.7em;
-  font-style: thin;
-  align-content: center;
-}
-
-.content {
-  padding: 0 20px;
-  display: none;
-  overflow: hidden;
-
-}
-
-.thumbnails
-{ margin-right: -1.4px;
-  margin-top: -8px;}
-
-
-.th1{
- width: 49%;
- height: 250px;
- margin-right: 1.4px;
- margin-top: 20px;
- margin-bottom: 5px;
- display: inline-block;
-}
-
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px; 
-
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 5px 25px 12px 3px;
-  transition: 0.3s;
-  font-size: 17px;
-  color: grey;
-  background-color:white;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  color: black;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  color: black;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 0px;
-  border-top: none;
-}
-
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cinemaUX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Poppins Font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* For Poppins ExtraLight in the hero section and Works heading */
+        .font-poppins-extralight {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200; /* ExtraLight weight */
+        }
+        /* Custom style for the hero section text ratio based on the image */
+        .hero-description {
+            max-width: 70%; /* Adjusted to 70% for wider text */
+            line-height: 1.8; /* Increased line height for more spacing */
+        }
+        @media (max-width: 767px) {
+            .hero-description {
+                max-width: 100%;
+            }
+        }
+        /* Full-width video container for responsive embed */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            background-color: #000; /* Fallback background */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
-<header>  
-    <div>
-    <img src="./img/logo.png" style="padding-top: 0em; width: 34%;" >
-    </div>
-</header>
-<body>
+<body class="bg-black text-white">
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<div class="main" style="height: 259px; ">
-    <img src="./img/main.jpg" style="width: 100%; height: 100%; " >   
-</div>
-
-
-
-
-
-<!--/  메인 탭 **** APP  
-  ____  ____   ____                                        
- /    ||    \ |    \                                       
-|  o  ||  o  )|  o  )                                      
-|     ||   _/ |   _/                                       
-|  _  ||  |   |  |                                         
-|  |  ||  |   |  |                                         
-|__|__||__|   |__| 
-
-/-->
-
-<button type="button" class="collapsible">
-    <img src="./img/app.png" style="width: 140px;">
-    <img src="./img/icon.png" style="width: 38px; padding-left: 155px; padding-top: 1px;">
-</button>
-
-
-<div class="content">
-       
-
-       <!--/세부 프로젝트 탭/-->
-        <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'Project#S')">Project #S</button>
-            <button class="tablinks" onclick="openCity(event, 'Instagram')">Instagram</button>
-            <button class="tablinks" onclick="openCity(event, 'ZUM')">ZUM</button>
-            <button class="tablinks" onclick="openCity(event, 'Bank')">Bank</button>
-            <button class="tablinks" onclick="openCity(event, 'Map')">Map</button>
-            <button class="tablinks" onclick="openCity(event, 'Youtube')">Youtube</button>
-            <button class="tablinks" onclick="openCity(event, 'Sdokugame')">Sdoku game</button>
-            <button class="tablinks" onclick="openCity(event, 'Taxi')">Taxi</button>
-        </div>
-
-
-        
-        <!--/    APP **** Project #S    / 시작 -->
-
-        <div id="Project#S" class="tabcontent">
-            <div class="thumbnails">
-           
-                
-                    <div class="th1">
-                        <a href="https://cloud.protopie.io/p/fe068c4aee?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
-                            <div class="image"> 
-                                <img src="./img/s/s1_i.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>Project #S (iOS)</p>
-                            </div>
-                        </a>
-                    </div>
-                
-
-                    <div class="th1">
-                        <a href="https://cloud.protopie.io/p/bd6beec957?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
-                            <div class="image"> 
-                                <img src="./img/s/s1_a.png" style="height: 225px;">
-                            </div>
-                            
-                            <div class="caption">
-                                <p>Project #S (AOS)</p>
-                            </div>
-                        </a>
-                    </div>
-
-
-                    <div class="th1">
-                        <a href="https://cloud.protopie.io/p/bfd3d53ad2?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
-                            <div class="image"> 
-                                <img src="./img/s/s2_i.png" style="height: 225px;">
-                            </div>
-                            
-                            <div class="caption">
-                                <p>프로필</p>
-                            </div>
-                        </a>
-                    </div>
-
-
-                    <div class="th1">
-                        <a href="https://www.w3schools.com">
-                            <div class="image"> 
-                                <img src="./img/s/s2_a.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>문자채팅</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="th1">
-                        <a href="https://www.w3schools.com">
-                            <div class="image"> 
-                                <img src="./img/s/s4_a.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>음성채팅</p>
-                            </div>
-                        </a>
-                    </div>
-                
-
-                    <div class="th1">
-                        <a href="https://cloud.protopie.io/p/04de49af85?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
-                            <div class="image"> 
-                                <img src="./img/s/s3_i.png" style="height: 225px;">
-                            </div>
-                            
-                            <div class="caption">
-                                <p>화상채팅</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="th1">
-                        <a href="https://www.w3schools.com">
-                            <div class="image"> 
-                                <img src="./img/s/s3_aa.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>프로필 목록</p>
-                            </div>
-                        </a>
-                    </div>
+    <!-- Header Section -->
+    <header class="fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-12 flex justify-between items-center bg-black bg-opacity-0 transition-all duration-300" id="main-header">
+        <!-- Logo Image Placeholder (assuming you'll replace this with an actual CINEMAUX logo image) -->
+        <img src="https://placehold.co/150x50/000000/ffffff?text=CINEMAUX" alt="CINEMAUX Logo" class="h-8 md:h-10">
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden focus:outline-none text-gray-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+    </header>
+  
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section class="min-h-screen px-6 md:px-12 bg-black flex flex-col justify-start pt-12 md:pt-16">
+            <div class="max-w-7xl mx-auto w-full">
+                <p class="text-white mt-8 mb-12 font-poppins-extralight text-2xl md:text-3xl hero-description">
+                    CinemaUX enables the creation of<br class="hidden md:block">
+                    digital screens used in cinema.<br class="hidden md:block">
+                    All digital screen configurations<br class="hidden md:block">
+                    that the director wants,<br class="hidden md:block">
+                    All devices are fully operational.
+                </p>
             </div>
-            <br>
-            <br>
-        </div>
+        </section>
 
-        <!--/    APP **** Project #S    / 끝 -->
-
-
-
-
-        <!--/    APP **** Instagram    / 시작-->
-
-        <div id="Instagram" class="tabcontent">
-            <div class="thumbnails">
-           
-                
-                    <div class="th1">
-                        <a href="https://www.w3schools.com">
-                            <div class="image"> 
-                                <img src="./img/main.jpg" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>피드</p>
-                            </div>
-                        </a>
-                    </div>
-                
-
-                    <div class="th1">
-                        <a href="https://www.w3schools.com">
-                            <div class="image"> 
-                                <img src="./img/main.jpg" style="height: 225px;">
-                            </div>
-                            
-                            <div class="caption">
-                                <p>인스타그램 실행</p>
-                            </div>
-                        </a>
-                    </div>
+        <!-- YouTube Video Section -->
+        <section id="hero-video" class="w-full h-screen bg-black flex items-center justify-center overflow-hidden py-12 md:py-16">
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/ZgYYKOO4_44?autoplay=1&mute=1&loop=1&playlist=ZgYYKOO4_44&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playsinline=1"
+                    frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowfullscreen
+                    title="YouTube video player"
+                ></iframe>
             </div>
-            <br>
-            <br>
-        </div>
+        </section>
 
-        <!--/    APP **** Instagram    / 끝-->
-
-
-        <!--/    APP **** ZUM    / 시작-->
-
-        <div id="ZUM" class="tabcontent">
-            <div class="thumbnails">
-           
-                
-                    <div class="th1">
-                        <a href="https://www.w3schools.com">
-                            <div class="image"> 
-                                <img src="./img/s/zum2.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>검색피드</p>
-                            </div>
-                        </a>
+        <!-- Works Section -->
+        <section id="projects" class="py-16 md:py-24 px-6 md:px-12 bg-black">
+            <h2 class="text-3xl md:text-4xl font-poppins-extralight mb-10 text-gray-50 text-center md:text-left">Works</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                <!-- Project Card 1 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/300x450/1a202c/ffffff?text=Project+1" alt="Project 1" class="w-full h-72 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg text-gray-100">Project Title 1</h3>
+                        <p class="font-light text-sm text-gray-400">Short description of the project.</p>
                     </div>
-                
-
-                    <div class="th1">
-                        <a href="https://cloud.protopie.io/p/bcd424836b?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
-                            <div class="image"> 
-                                <img src="./img/s/zum.png" style="height: 225px;">
-                            </div>
-                            
-                            <div class="caption">
-                                <p>줌(ZUM) 실행</p>
-                            </div>
-                        </a>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/300x450/1a202c/ffffff?text=Project+2" alt="Project 2" class="w-full h-72 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg text-gray-100">Project Title 2</h3>
+                        <p class="font-light text-sm text-gray-400">Short description of the project.</p>
                     </div>
-            </div>
-            <br>
-            <br>
-        </div>
-
-        <!--/    APP **** ZUM    / 끝-->
-
-
-        <!--/    APP **** Bank    / 시작-->
-
-        <div id="Bank" class="tabcontent">
-            <div class="thumbnails">
-           
-                
-                    <div class="th1">
-                        <a href="https://cloud.protopie.io/p/129b007f54?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
-                            <div class="image"> 
-                                <img src="./img/s/bank.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>은행APP 송금</p>
-                            </div>
-                        </a>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/300x450/1a202c/ffffff?text=Project+3" alt="Project 3" class="w-full h-72 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg text-gray-100">Project Title 3</h3>
+                        <p class="font-light text-sm text-gray-400">Short description of the project.</p>
                     </div>
-
-
-            </div>
-            <br>
-            <br>
-        </div>
-
-        <!--/    APP **** Bank    / 끝-->
-
-
-        <!--/    APP **** Map    / 시작-->
-
-        <div id="Map" class="tabcontent">
-            <div class="thumbnails">
-           
-                
-                    <div class="th1">
-                        <a href="https://cloud.protopie.io/p/338acef79c?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
-                            <div class="image"> 
-                                <img src="./img/s/map.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>로드뷰 APP</p>
-                            </div>
-                        </a>
+                </div>
+                <!-- Project Card 4 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/300x450/1a202c/ffffff?text=Project+4" alt="Project 4" class="w-full h-72 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg text-gray-100">Project Title 4</h3>
+                        <p class="font-light text-sm text-gray-400">Short description of the project.</p>
                     </div>
-
-
-            </div>
-            <br>
-            <br>
-        </div>
-
-        <!--/    APP **** Map    / 끝-->
-
-
-        <!--/    APP **** Youtube    / 시작-->
-
-        <div id="Youtube" class="tabcontent">
-            <div class="thumbnails">
-           
-                
-                    <div class="th1">
-                        <a href="https://cloud.protopie.io/p/4ba1922075?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
-                            <div class="image"> 
-                                <img src="./img/s/youtube.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>유튜브 APP</p>
-                            </div>
-                        </a>
+                </div>
+                <!-- Project Card 5 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/300x450/1a202c/ffffff?text=Project+5" alt="Project 5" class="w-full h-72 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg text-gray-100">Project Title 5</h3>
+                        <p class="font-light text-sm text-gray-400">Short description of the project.</p>
                     </div>
-
-
-            </div>
-            <br>
-            <br>
-        </div>
-
-        <!--/    APP **** Youtube    / 끝-->
-
-
-        <!--/    APP **** Sdoku game    / 시작-->
-
-        <div id="Sdokugame" class="tabcontent">
-            <div class="thumbnails">
-           
-                
-                    <div class="th1">
-                        <a href="https://www.w3schools.com">
-                            <div class="image"> 
-                                <img src="./img/s/sdoku.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>스도쿠 게임</p>
-                            </div>
-                        </a>
+                </div>
+                <!-- Project Card 6 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/300x450/1a202c/ffffff?text=Project+6" alt="Project 6" class="w-full h-72 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg text-gray-100">Project Title 6</h3>
+                        <p class="font-light text-sm text-gray-400">Short description of the project.</p>
                     </div>
-
-
-            </div>
-            <br>
-            <br>
-        </div>
-
-        <!--/    APP **** Sdoku game    / 끝-->
-
-
-
-        <!--/    APP **** Taxi    / 시작-->
-
-        <div id="Taxi" class="tabcontent">
-            <div class="thumbnails">
-           
-                
-                    <div class="th1">
-                        <a href="https://cloud.protopie.io/p/3099fa4351?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
-                            <div class="image"> 
-                                <img src="./img/s/taxi.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>콜택시 APP</p>
-                            </div>
-                        </a>
+                </div>
+                <!-- Project Card 7 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/300x450/1a202c/ffffff?text=Project+7" alt="Project 7" class="w-full h-72 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg text-gray-100">Project Title 7</h3>
+                        <p class="font-light text-sm text-gray-400">Short description of the project.</p>
                     </div>
-
-
-            </div>
-            <br>
-            <br>
-        </div>
-
-        <!--/    APP **** Taxi    / 끝-->
-
-</div>
-
-
-
-
-
-
-
-
-<!--/  메인 탭 **** Phone  
- ____   __ __   ___   ____     ___ 
-|    \ |  |  | /   \ |    \   /  _]
-|  o  )|  |  ||     ||  _  | /  [_ 
-|   _/ |  _  ||  O  ||  |  ||    _]
-|  |   |  |  ||     ||  |  ||   [_ 
-|  |   |  |  ||     ||  |  ||     |
-|__|   |__|__| \___/ |__|__||_____|
-
-/-->
-
-<button type="button" class="collapsible">
-    <img src="./img/phone.png" style="width: 140px;">
-    <img src="./img/icon.png" style="width: 38px; padding-left: 155px; padding-top: 1px;">
-</button>
-
-
-<div class="content">
-       
-
-       <!--/세부 프로젝트 탭/-->
-        <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'iOS')">iOS</button>
-            <button class="tablinks" onclick="openCity(event, 'Android')">Android</button>
-        </div>
-
-
-        
-        <!--/    APP **** iOS    / 시작 -->
-
-        <div id="iOS" class="tabcontent">
-            <div class="thumbnails">
-           
-                
-                    <div class="th1">
-                        <a href="https://cloud.protopie.io/p/7d937483f9?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
-                            <div class="image"> 
-                                <img src="./img/s/i2.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>잠금화면 (실시간 알림)</p>
-                            </div>
-                        </a>
-                    </div>  
-
-                     <div class="th1">
-                        <a href="https://cloud.protopie.io/p/6d1daaacab?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
-                            <div class="image"> 
-                                <img src="./img/s/i3.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>잠금화면 (실시간 알림)</p>
-                            </div>
-                        </a>
-                    </div> 
-
-                     <div class="th1">
-                        <a href="https://cloud.protopie.io/p/d2e12e007b?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
-                            <div class="image"> 
-                                <img src="./img/s/i1.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>잠금화면 (기존 알림)</p>
-                            </div>
-                        </a>
-                    </div>      
-            </div>
-            <br>
-            <br>
-        </div>
-
-        <!--/    APP **** iOS    / 끝 -->
-
-
-
-
-        <!--/    APP **** Android    / 시작-->
-
-        <div id="Android" class="tabcontent">
-            <div class="thumbnails">
-           
-                
-                    <div class="th1">
-                        <a href="https://cloud.protopie.io/p/c0a0b03f16?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
-                            <div class="image"> 
-                                <img src="./img/s/a3.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>잠금화면 (실시간 알림)</p>
-                            </div>
-                        </a>
+                </div>
+                <!-- Project Card 8 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/300x450/1a202c/ffffff?text=Project+8" alt="Project 8" class="w-full h-72 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg text-gray-100">Project Title 8</h3>
+                        <p class="font-light text-sm text-gray-400">Short description of the project.</p>
                     </div>
-                
-
-                    <div class="th1">
-                        <a href="https://cloud.protopie.io/p/5f4536b0b1?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
-                            <div class="image"> 
-                                <img src="./img/s/a2.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>잠금화면 (기존 알림)</p>
-                            </div>
-                        </a>
+                </div>
+                <!-- Project Card 9 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/300x450/1a202c/ffffff?text=Project+9" alt="Project 9" class="w-full h-72 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg text-gray-100">Project Title 9</h3>
+                        <p class="font-light text-sm text-gray-400">Short description of the project.</p>
                     </div>
-
-
-                    <div class="th1">
-                        <a href="https://cloud.protopie.io/p/176aec1042?touchHint=true&ui=false&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=true">
-                            <div class="image"> 
-                                <img src="./img/s/a1.png" style="height: 225px;">
-                            </div>
-                            
-                            <div class="caption">
-                                <p>홈화면 실행</p>
-                            </div>
-                        </a>
+                </div>
+                <!-- Project Card 10 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/300x450/1a202c/ffffff?text=Project+10" alt="Project 10" class="w-full h-72 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg text-gray-100">Project Title 10</h3>
+                        <p class="font-light text-sm text-gray-400">Short description of the project.</p>
                     </div>
-
-                    <div class="th1">
-                        <a href="https://cloud.protopie.io/p/0af07264d9?touchHint=true&ui=true&scaleToFit=false&cursorType=arrow&mockup=true&playerAppPopup=false">
-                            <div class="image"> 
-                                <img src="./img/s/a4.png" style="height: 225px;">
-                            </div>
-                            
-                            <div class="caption">
-                                <p>통화중 알림</p>
-                            </div>
-                        </a>
+                </div>
+                <!-- Project Card 11 (Added) -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/300x450/1a202c/ffffff?text=Project+11" alt="Project 11" class="w-full h-72 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg text-gray-100">Project Title 11</h3>
+                        <p class="font-light text-sm text-gray-400">Short description of the project.</p>
                     </div>
-
-            </div>
-            <br>
-            <br>
-        </div>
-
-        <!--/    APP **** Android    / 끝-->
-
-</div>
-
-
-
-
-<!--/  메인 탭 **** PC
- ____      __                      
-|    \    /  ]                     
-|  o  )  /  /                      
-|   _/  /  /                       
-|  |   /   \_                      
-|  |   \     |                     
-|__|    \____|                     
-
-/-->
-
-<button type="button" class="collapsible">
-    <img src="./img/pc.png" style="width: 140px;">
-    <img src="./img/icon.png" style="width: 38px; padding-left: 155px; padding-top: 1px;">
-</button>
-
-
-<div class="content">
-       
-
-       <!--/세부 프로젝트 탭/-->
-        <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'Project#SPC')">Project #S</button>
-            <button class="tablinks" onclick="openCity(event, 'Project#S2')">Project #S2</button>
-            <button class="tablinks" onclick="openCity(event, 'Google')">Google</button>
-            <button class="tablinks" onclick="openCity(event, 'game')">사행성게임기</button>
-
-        </div>
-
-
-        
-        <!--/    APP **** Project #S    / 시작 -->
-
-        <div id="Project#SPC" class="tabcontent">
-            <div class="thumbnails">
-           
-                
-                    <div class="th1">
-                        <a href="https://www.w3schools.com">
-                            <div class="image"> 
-                                <img src="./img/main.jpg" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>#S 메인</p>
-                            </div>
-                        </a>
-                    </div>  
-
-                    <div class="th1">
-                        <a href="https://www.w3schools.com">
-                            <div class="image"> 
-                                <img src="./img/main.jpg" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>#S 관리자페이지</p>
-                            </div>
-                        </a>
-                    </div> 
-
-            </div>
-            <br>
-            <br>
-        </div>
-
-        <!--/    APP **** Project #S    / 끝 -->
-
-
-
-    <!--/    APP **** Project #S2    / 시작 -->
-
-        <div id="Project#S2" class="tabcontent">
-            <div class="thumbnails">
-           
-                
-                    <div class="th1">
-                        <a href="https://www.w3schools.com">
-                            <div class="image"> 
-                                <img src="./img/main.jpg" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>Project #S2</p>
-                            </div>
-                        </a>
-                    </div>  
-
-            </div>
-            <br>
-            <br>
-        </div>
-
-        <!--/    APP **** Project #S2   / 끝 -->
-
-
-
-
-        <!--/    APP **** Google    / 시작-->
-
-        <div id="Google" class="tabcontent">
-            <div class="thumbnails">
-           
-                
-                    <div class="th1">
-                        <a href="https://www.w3schools.com">
-                            <div class="image"> 
-                                <img src="./img/main.jpg" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>웹서핑</p>
-                            </div>
-                        </a>
+                </div>
+                <!-- Project Card 12 (Added) -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/300x450/1a202c/ffffff?text=Project+12" alt="Project 12" class="w-full h-72 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg text-gray-100">Project Title 12</h3>
+                        <p class="font-light text-sm text-gray-400">Short description of the project.</p>
                     </div>
-                
-
-                    <div class="th1">
-                        <a href="https://www.w3schools.com">
-                            <div class="image"> 
-                                <img src="./img/main.jpg" style="height: 225px;">
-                            </div>
-                            
-                            <div class="caption">
-                                <p>로드뷰</p>
-                            </div>
-                        </a>
+                </div>
+                <!-- Project Card 13 (Added) -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/300x450/1a202c/ffffff?text=Project+13" alt="Project 13" class="w-full h-72 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-lg text-gray-100">Project Title 13</h3>
+                        <p class="font-light text-sm text-gray-400">Short description of the project.</p>
                     </div>
-                    
+                </div>
             </div>
-            <br>
-            <br>
-        </div>
+        </section>
 
-        <!--/    APP **** Google    / 끝-->
-
-
-
-         <!--/    APP **** 사행성게임기    / 시작 -->
-
-        <div id="game" class="tabcontent">
-            <div class="thumbnails">
-           
-                
-                    <div class="th1">
-                        <a href="https://www.w3schools.com">
-                            <div class="image"> 
-                                <img src="./img/s/game1.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>사행성게임기</p>
-                            </div>
-                        </a>
-                    </div>  
-
+        <!-- New Demonstration Section -->
+        <section id="demonstration" class="py-16 md:py-24 px-6 md:px-12 bg-black flex flex-col md:flex-row items-center justify-center space-y-12 md:space-y-0 md:space-x-20">
+            <div class="w-full md:w-1/3 flex justify-center">
+                <!-- Placeholder for phone with video -->
+                <img src="https://placehold.co/300x600/000000/ffffff?text=Phone+Demo" alt="Phone Demonstration" class="w-auto h-96 md:h-[600px] object-contain">
             </div>
-            <br>
-            <br>
-        </div>
-
-        <!--/    APP **** 사행성게임기   / 끝 -->
-
-</div>
-
-
-
-<!--/  메인 탭 **** ETC
-   ___  ______     __              
-  /  _]|      |   /  ]             
- /  [_ |      |  /  /              
-|    _]|_|  |_| /  /               
-|   [_   |  |  /   \_              
-|     |  |  |  \     |             
-|_____|  |__|   \____|                                        
-
-/-->
-
-<button type="button" class="collapsible">
-    <img src="./img/etc.png" style="width: 140px;">
-    <img src="./img/icon.png" style="width: 38px; padding-left: 155px; padding-top: 1px;">
-</button>
-
-
-<div class="content">
-       
-
-       <!--/세부 프로젝트 탭/-->
-        <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'Car')">Car program</button>
-        </div>
-
-        <!--/    APP **** Car    / 시작 -->
-
-        <div id="Car" class="tabcontent">
-            <div class="thumbnails">
-           
-                
-                    <div class="th1">
-                        <a href="https://www.w3schools.com">
-                            <div class="image"> 
-                                <img src="./img/s/car.png" style="height: 225px;">
-                            </div>
-
-                            <div class="caption">
-                                <p>Car UX</p>
-                            </div>
-                        </a>
-                    </div>  
+            <div class="w-full md:w-2/3 text-center md:text-left">
+                <p class="text-white font-poppins-extralight text-[1.375rem] md:text-[1.65rem] leading-tight mb-8">
+                    모든 기기에서<br>
+                    실제 구동이 가능한<br>
+                    디지털 화면을 제작합니다.
+                </p>
+                <a href="#" class="inline-flex items-center space-x-2 py-3 px-6 rounded-full bg-white text-black hover:bg-gray-200 transition-all duration-300 shadow-md">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    <span>실제 구동 링크</span>
+                </a>
             </div>
-            <br>
-            <br>
-        </div>
+        </section>
 
-        <!--/    APP **** Car    / 끝 -->
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 px-6 md:px-12 bg-black">
+            <h2 class="text-3xl md:text-4xl font-poppins-extralight mb-12 text-gray-50 text-center md:text-left">Contact</h2>
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center text-left md:text-left space-y-4 md:space-y-0">
+                <div class="flex flex-col space-y-2">
+                    <p class="text-gray-300 font-light text-lg">
+                        cinemaux.ceo@gmail.com
+                    </p>
+                    <p class="text-gray-300 font-light text-lg">
+                        Instagram
+                    </p>
+                    <p class="text-gray-300 font-light text-lg">
+                        Youtube
+                    </p>
+                </div>
+                <p class="text-gray-500 text-sm md:text-base md:self-end">
+                    &copy; 2025 cinemaUX
+                </p>
+            </div>
+        </section>
+    </main>
 
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const header = document.getElementById('main-header');
 
-</div>
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
 
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
 
-<!--/   
- ____   _       ____  ____   __  _ 
-|    \ | |     /    ||    \ |  |/ ]
-|  o  )| |    |  o  ||  _  ||  ' / 
-|     || |___ |     ||  |  ||    \ 
-|  O  ||     ||  _  ||  |  ||     \
-|     ||     ||  |  ||  |  ||  .  |
-|_____||_____||__|__||__|__||__|\_|
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
 
--->
-
-<button type="button" class="collapsible">
-</button>
-
-<div class="content"></div>
-
-<br>
-<br>
-<br>
-<br>
-
-<div class="footer">
-    <h1>www.cinemaux.co.kr</h>
-    <h1>Copyright&copy; 2022 cinemaUX All rights reserved.</h1>
-</div>
-
-
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-</script>
-
-<script>
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>
-
-
-
+        // Header scroll behavior
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                header.classList.remove('bg-opacity-0');
+                header.classList.add('bg-opacity-80', 'backdrop-blur-sm');
+            } else {
+                header.classList.add('bg-opacity-0');
+                header.classList.remove('bg-opacity-80', 'backdrop-blur-sm');
+            }
+        });
+    </script>
 </body>
 </html>
