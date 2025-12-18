@@ -7,13 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* 기본 스타일 */
         body { font-family: 'Poppins', 'Pretendard', sans-serif; background-color: #050505; -webkit-font-smoothing: antialiased; color: white; }
-        
-        /* 텍스트 드래그 반전 효과 */
         ::selection { background-color: #ffffff; color: #000000; }
         ::-moz-selection { background-color: #ffffff; color: #000000; }
-
         .text-gradient { background: linear-gradient(to right, #ffffff, #888888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         .hero-title { font-size: 3rem; font-weight: 500; line-height: 1.2 !important; letter-spacing: -0.04em; margin-bottom: 1.5rem; }
@@ -45,12 +41,39 @@
         @media (min-width: 768px) { .contact-label { font-size: 4.5rem; } }
         .contact-email { font-size: 1.5rem; font-weight: 500; color: #f4f4f5; text-decoration: underline; text-underline-offset: 8px; }
 
+        /* 플로팅 버튼 스타일 */
+        .floating-nav {
+            position: fixed; bottom: 30px; right: 30px; z-index: 100;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        .float-btn {
+            width: 44px; height: 44px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease; opacity: 0; visibility: hidden;
+        }
+        .float-btn.show { opacity: 1; visibility: visible; }
+        .float-btn:hover { background: rgba(255, 255, 255, 0.2); border-color: rgba(255, 255, 255, 0.5); }
+        .float-btn svg { width: 18px; height: 18px; stroke: white; }
+
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #000; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
     </style>
 </head>
 <body>
+
+    <div class="floating-nav">
+        <button onclick="window.scrollTo(0,0)" class="float-btn" id="btn-up">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+        </button>
+        <button onclick="window.scrollTo(0, document.body.scrollHeight)" class="float-btn" id="btn-down">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+    </div>
 
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 py-6 px-8 md:px-16 flex justify-between items-center">
         <div class="logo-area">
@@ -68,8 +91,8 @@
             <div class="relative z-10 max-w-6xl">
                 <h1 class="hero-title">Creating <span class="text-gradient">Cinematic</span> <br> Digital Experiences.</h1>
                 <p class="hero-description text-lg md:text-xl text-zinc-300 max-w-3xl font-medium">
-                    시네마유엑스는 영화 속 모든 디지털 화면을 제작합니다. <br class="hidden md:block">
-                    모든 기기에서 실제 구동되는 경험을 선사합니다.
+                    시네마유엑스는 영화 속 디지털 화면을 실제 구동 가능한 완벽한 인터페이스로 구축합니다. <br class="hidden md:block">
+                    모든 기기에서 완벽하게 작동하는 경험을 선사합니다.
                 </p>
             </div>
             <div class="absolute -top-20 -right-20 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[140px]"></div>
@@ -105,140 +128,63 @@
                     <h3>Project Title 02</h3>
                     <p>Motion Graphics / 2024</p>
                 </div>
-                <div class="work-item group" data-date="20241215">
+                                <div class="work-item group" data-date="20241215">
                     <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
                         <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     </div>
                     <h3>Project Title 02</h3>
                     <p>Motion Graphics / 2024</p>
                 </div>
-                <div class="work-item group" data-date="20241215">
+                                <div class="work-item group" data-date="20241215">
                     <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
                         <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     </div>
                     <h3>Project Title 02</h3>
                     <p>Motion Graphics / 2024</p>
                 </div>
-                <div class="work-item group" data-date="20241215">
+                                <div class="work-item group" data-date="20241215">
                     <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
                         <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     </div>
                     <h3>Project Title 02</h3>
                     <p>Motion Graphics / 2024</p>
                 </div>
-                <div class="work-item group" data-date="20241215">
+                                <div class="work-item group" data-date="20241215">
                     <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
                         <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     </div>
                     <h3>Project Title 02</h3>
                     <p>Motion Graphics / 2024</p>
                 </div>
-                <div class="work-item group" data-date="20241215">
+                                <div class="work-item group" data-date="20241215">
                     <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
                         <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     </div>
                     <h3>Project Title 02</h3>
                     <p>Motion Graphics / 2024</p>
                 </div>
-                <div class="work-item group" data-date="20241215">
+                                <div class="work-item group" data-date="20241215">
                     <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
                         <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     </div>
                     <h3>Project Title 02</h3>
                     <p>Motion Graphics / 2024</p>
                 </div>
-                <div class="work-item group" data-date="20241215">
+                                <div class="work-item group" data-date="20241215">
                     <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
                         <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     </div>
                     <h3>Project Title 02</h3>
                     <p>Motion Graphics / 2024</p>
                 </div>
-                <div class="work-item group" data-date="20241215">
+                                <div class="work-item group" data-date="20241215">
                     <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
                         <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     </div>
                     <h3>Project Title 02</h3>
                     <p>Motion Graphics / 2024</p>
                 </div>
-                <div class="work-item group" data-date="20241215">
-                    <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
-                        <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <h3>Project Title 02</h3>
-                    <p>Motion Graphics / 2024</p>
-                </div>
-                <div class="work-item group" data-date="20241215">
-                    <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
-                        <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <h3>Project Title 02</h3>
-                    <p>Motion Graphics / 2024</p>
-                </div>
-                <div class="work-item group" data-date="20241215">
-                    <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
-                        <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <h3>Project Title 02</h3>
-                    <p>Motion Graphics / 2024</p>
-                </div>
-                <div class="work-item group" data-date="20241215">
-                    <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
-                        <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <h3>Project Title 02</h3>
-                    <p>Motion Graphics / 2024</p>
-                </div>
-                <div class="work-item group" data-date="20241215">
-                    <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
-                        <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <h3>Project Title 02</h3>
-                    <p>Motion Graphics / 2024</p>
-                </div>
-                <div class="work-item group" data-date="20241215">
-                    <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
-                        <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <h3>Project Title 02</h3>
-                    <p>Motion Graphics / 2024</p>
-                </div>
-                <div class="work-item group" data-date="20241215">
-                    <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
-                        <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <h3>Project Title 02</h3>
-                    <p>Motion Graphics / 2024</p>
-                </div>
-                <div class="work-item group" data-date="20241215">
-                    <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
-                        <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <h3>Project Title 02</h3>
-                    <p>Motion Graphics / 2024</p>
-                </div>
-                <div class="work-item group" data-date="20241215">
-                    <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
-                        <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <h3>Project Title 02</h3>
-                    <p>Motion Graphics / 2024</p>
-                </div>
-                <div class="work-item group" data-date="20241215">
-                    <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
-                        <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <h3>Project Title 02</h3>
-                    <p>Motion Graphics / 2024</p>
-                </div>
-                <div class="work-item group" data-date="20241215">
-                    <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
-                        <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <h3>Project Title 02</h3>
-                    <p>Motion Graphics / 2024</p>
-                </div>
-                <div class="work-item group" data-date="20241215">
+                                <div class="work-item group" data-date="20241215">
                     <div class="aspect-[3/4] overflow-hidden bg-zinc-900 rounded-sm mb-4">
                         <img src="https://placehold.co/600x800/222/fff?text=Work+02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     </div>
@@ -252,7 +198,7 @@
             <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-12">
                 <img src="https://placehold.co/400x700/000/fff?text=Functional+UI" class="w-full md:w-1/3 max-w-[240px] mx-auto grayscale opacity-40">
                 <div class="flex-1 text-center md:text-left">
-                    <h2 class="text-3xl md:text-5xl mb-6 leading-[1.2] font-semibold">Every screen,<br> Actually functional.<br><span class="text-lg md:text-xl opacity-50 block mt-3 font-normal">모든 기기에서 실제 구동이 가능합니다.</span></h2>
+                    <h2 class="text-3xl md:text-5xl mb-6 leading-[1.2] font-semibold">Every screen, Actually functional.<br><span class="text-lg md:text-xl opacity-50 block mt-3 font-normal">모든 기기에서 실제 구동이 가능합니다.</span></h2>
                     <a href="#" class="btn-round">Launch Demo</a>
                 </div>
             </div>
@@ -285,9 +231,23 @@
     </main>
 
     <script>
+        // 헤더 및 플로팅 버튼 스크롤 이벤트
         window.addEventListener('scroll', () => {
             const header = document.getElementById('main-header');
+            const btnUp = document.getElementById('btn-up');
+            const btnDown = document.getElementById('btn-down');
+            
+            // 헤더 변화
             header.classList.toggle('scrolled', window.scrollY > 50);
+
+            // 플로팅 버튼 표시 (어느 정도 내려왔을 때만)
+            if (window.scrollY > 300) {
+                btnUp.classList.add('show');
+                btnDown.classList.add('show');
+            } else {
+                btnUp.classList.remove('show');
+                btnDown.classList.remove('show');
+            }
         });
 
         function sortWorks(order) {
